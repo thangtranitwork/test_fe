@@ -536,11 +536,6 @@
                 return;
             }
 
-            if (!stringeeClient || !stringeeClient.isConnected()) {
-                alert('Please connect to Stringee first');
-                return;
-            }
-
             currentCall = stringeeClient.makeCall({
                 from: stringeeClient.userId,
                 to: phoneNumber,
@@ -557,11 +552,6 @@
             const phoneNumber = document.getElementById('videoCallNumber').value.trim();
             if (!phoneNumber) {
                 alert('Please enter user ID for video call');
-                return;
-            }
-
-            if (!stringeeClient || !stringeeClient.isConnected()) {
-                alert('Please connect to Stringee first');
                 return;
             }
 
@@ -697,12 +687,7 @@
                 alert('Please enter message and recipient');
                 return;
             }
-
-            if (!stringeeClient || !stringeeClient.isConnected()) {
-                alert('Please connect to Stringee first');
-                return;
-            }
-
+            
             // Add message to chat display
             addToChatMessages('You', message);
             document.getElementById('chatMessage').value = '';
